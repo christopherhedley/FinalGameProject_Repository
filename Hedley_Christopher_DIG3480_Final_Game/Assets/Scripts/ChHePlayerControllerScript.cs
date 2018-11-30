@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class ChHePlayerControllerScript : MonoBehaviour {
 
+    //public GameObject breath;
+   // public Transform ExhaleSpawn;
+
+
+
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
-		
+
+      //  Instantiate(breath, ExhaleSpawn.position, ExhaleSpawn.rotation);
+
 	}
 }
