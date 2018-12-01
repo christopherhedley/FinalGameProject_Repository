@@ -21,7 +21,6 @@ public class ChHeGameControllerScript : MonoBehaviour {
     void Start()
     {
         endText.text = "";
-        temp = 10f;
         SetTempText();
 
         startImage.SetActive(true);
@@ -42,11 +41,10 @@ public class ChHeGameControllerScript : MonoBehaviour {
     void FixedUpdate()
     {
       timer = timer + Time.deltaTime;
-      if (timer >= 10)
+      if (temp > 0.0f && timer >= 10)
             {
 
             loseImage.SetActive(true);
-            Destroy(winImage);
                // endText.text = "Ouch! Burned Tongue";
                // StartCoroutine(ByeAfterDelay(2));
             }
@@ -58,10 +56,9 @@ public class ChHeGameControllerScript : MonoBehaviour {
    {
     tempText.text = "Temperature: " + temp.ToString();
 
-    if (temp <= 0.0f)
+    if (timer <= 10 && temp <= 0.0f)
         {
             winImage.SetActive(true);
-            Destroy(loseImage);
            //endText.text = "Mmm, just right!!";
            // GameLoader.AddScore(10);
             //       StartCoroutine(ByeAfterDelay(2));
